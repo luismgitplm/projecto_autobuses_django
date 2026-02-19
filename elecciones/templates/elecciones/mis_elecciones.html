@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Mis Elecciones{% endblock %}
+
+{% block content %}
+<h1>Mis Elecciones</h1>
+<a class="btn btn-success mb-2" href="{% url 'crear_eleccion' %}">Nueva Elección</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Autobús</th>
+            <th>Zona</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for eleccion in object_list %}
+        <tr>
+            <td>{{ eleccion.id }}</td>
+            <td>{{ eleccion.autobus.nombre }}</td>
+            <td>{{ eleccion.autobus.zona.nombre }}</td>
+            <td>{{ eleccion.fecha_creacion }}</td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="{% url 'borrar_eleccion' eleccion.id %}">Borrar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5">No tienes elecciones todavía.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

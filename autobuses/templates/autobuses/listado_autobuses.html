@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Autobuses{% endblock %}
+
+{% block content %}
+<h1>Autobuses</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Origen</th>
+            <th>Destino</th>
+            <th>Zona</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for autobus in object_list %}
+        <tr>
+            <td>{{ autobus.id }}</td>
+            <td>{{ autobus.nombre }}</td>
+            <td>{{ autobus.origen }}</td>
+            <td>{{ autobus.destino }}</td>
+            <td>{{ autobus.zona.nombre }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5">No hay autobuses disponibles.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

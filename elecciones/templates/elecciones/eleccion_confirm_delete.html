@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Borrar Elección{% endblock %}
+
+{% block content %}
+<h1>Borrar Elección</h1>
+<p>¿Seguro que quieres borrar la elección de <strong>{{ object.autobus.nombre }}</strong>?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, borrar</button>
+    <a href="{% url 'mis_elecciones' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
