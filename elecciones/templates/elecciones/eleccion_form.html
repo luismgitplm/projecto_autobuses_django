@@ -7,7 +7,7 @@
     {% csrf_token %}
     <div class="mb-3">
         {{ form.autobus.label_tag }}
-        {{ form.autobus|add_class:"form-control" }}
+        {{ form.autobus }}
     </div>
     <button type="submit" class="btn btn-primary">Guardar</button>
     <a href="{% url 'mis_elecciones' %}" class="btn btn-secondary">Cancelar</a>

@@ -6,14 +6,12 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Nombre</th>
         </tr>
     </thead>
     <tbody>
         {% for zona in object_list %}
         <tr>
-            <td>{{ zona.id }}</td>
             <td>{{ zona.nombre }}</td>
         </tr>
         {% empty %}
