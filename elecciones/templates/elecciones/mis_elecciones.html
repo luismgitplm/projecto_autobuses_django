@@ -7,7 +7,6 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Autobús</th>
             <th>Zona</th>
             <th>Fecha</th>
@@ -17,7 +16,6 @@
     <tbody>
         {% for eleccion in object_list %}
         <tr>
-            <td>{{ eleccion.id }}</td>
             <td>{{ eleccion.autobus.nombre }}</td>
             <td>{{ eleccion.autobus.zona.nombre }}</td>
             <td>{{ eleccion.fecha_creacion }}</td>

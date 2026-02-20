@@ -11,7 +11,6 @@ class MisEleccionesListView(LoginRequiredMixin, ListView):
     template_name = "elecciones/mis_elecciones.html"
 
     def get_queryset(self):
-        # Solo mostrar las elecciones del usuario logueado
         return Eleccion.objects.filter(usuario=self.request.user)
 
 
@@ -22,7 +21,6 @@ class CrearEleccionView(LoginRequiredMixin, CreateView):
     success_url = "/mis-elecciones/"
 
     def form_valid(self, form):
-        # Asignar automáticamente el usuario logueado
         form.instance.usuario = self.request.user
         return super().form_valid(form)
 
@@ -33,7 +31,6 @@ class BorrarEleccionView(LoginRequiredMixin, DeleteView):
     success_url = "/mis-elecciones/"
 
     def get_queryset(self):
-        # Evitar que un usuario borre elecciones de otros
         return Eleccion.objects.filter(usuario=self.request.user)
 
 def signup(request):
@@ -41,8 +38,8 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)  # loguea al usuario automáticamente
-            return redirect('mis_elecciones')  # redirige al listado de elecciones
+            login(request, user) 
+            return redirect('mis_elecciones') 
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
