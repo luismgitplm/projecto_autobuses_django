@@ -9,7 +9,8 @@
         <tr>
             <th>Autobús</th>
             <th>Zona</th>
-            <th>Fecha</th>
+            <th>Origen</th>
+            <th>Destino</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -18,7 +19,8 @@
         <tr>
             <td>{{ eleccion.autobus.nombre }}</td>
             <td>{{ eleccion.autobus.zona.nombre }}</td>
-            <td>{{ eleccion.fecha_creacion }}</td>
+            <td>{{ eleccion.autobus.origen }}</td>
+            <td>{{ eleccion.autobus.destino }}</td>
             <td>
                 <a class="btn btn-danger btn-sm" href="{% url 'borrar_eleccion' eleccion.id %}">Borrar</a>
             </td>
