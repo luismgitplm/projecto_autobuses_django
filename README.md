@@ -7,7 +7,7 @@ propias, así como algunos fragmentos de código de los modelos.
 
 ## Vista de login:
 Pantalla a la que se redirige a cualquier usuario que carezca de token de sesión, si un usuario ya está registrado accede indicando su nombre de usuario y contraseña, si carece de cuenta
-puede crear una en el botón 'Regístrate aquí'
+puede crear una registrándose.
 
 ![Pantalla de login](imagenes/login.png)
 
